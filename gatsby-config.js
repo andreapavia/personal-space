@@ -9,10 +9,12 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Andrea's personal space`,
+    description: `
+      My own showcase and tinkering website.
+    `,
+    author: `@andreapavia`,
+    siteUrl: `https://personalspace.gatsbyjs.io/`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -37,6 +39,19 @@ module.exports = {
         // theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        web: [
+          {
+            name: `Amiri`,
+            file: `https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&display=swap`,
+          },
+        ],
       },
     },
   ],
