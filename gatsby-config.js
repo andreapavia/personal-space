@@ -60,5 +60,6 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-eslint',
         },
+        'gatsby-plugin-sass',
     ],
 };
