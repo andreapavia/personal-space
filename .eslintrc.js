@@ -32,4 +32,9 @@ module.exports = {
         semi: [1, 'always'],
         'react-hooks/exhaustive-deps': 'warn',
     },
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
 };
