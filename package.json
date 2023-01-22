@@ -1,21 +1,35 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "personal-space",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "my own portfolio/playground for frontend developement",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Andrea Pavia <a.pavia95@gmail.com>",
   "dependencies": {
     "gatsby": "^5.4.2",
+    "gatsby-omni-font-loader": "^2.0.2",
+    "gatsby-plugin-eslint": "^4.0.3",
     "gatsby-plugin-image": "^3.4.0",
     "gatsby-plugin-manifest": "^5.4.0",
+    "gatsby-plugin-sass": "^6.4.0",
     "gatsby-plugin-sharp": "^5.4.0",
     "gatsby-source-filesystem": "^5.4.0",
     "gatsby-transformer-sharp": "^5.4.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",    
+    "sass": "^1.57.1"
   },
   "devDependencies": {
-    "prettier": "^2.8.1"
+    "@babel/eslint-parser": "^7.19.1",
+    "eslint": "^8.32.0",
+    "eslint-plugin-react": "^7.32.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-webpack-plugin": "^3.2.0",
+    "prettier": "^2.8.1",
+    "stylelint": "^14.16.1",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^6.1.0"
   },
   "keywords": [
     "gatsby"
@@ -28,7 +42,8 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lint": "eslint --ext js,jsx ."
   },
   "repository": {
     "type": "git",
