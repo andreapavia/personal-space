@@ -31,6 +31,7 @@ module.exports = {
         'no-debugger': 'warn',
         semi: [1, 'always'],
         'react-hooks/exhaustive-deps': 'warn',
+        'react/prop-types': 'off',
     },
     settings: {
         react: {

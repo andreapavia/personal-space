@@ -1,6 +1,8 @@
 import React from 'react';
-import Blog from '../components/blog/Blog';
+import Hero from '../components/hero/Hero';
 
-export default () => {
-    return <Blog />;
+const Index = () => {
+    return <Hero />;
 };
+
+export default Index;

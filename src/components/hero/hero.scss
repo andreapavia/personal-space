@@ -1,0 +1,81 @@
+@use '../../styles/variables';
+@use '../../styles/global';
+
+.blog {
+    background-color: variables.$background-1;
+    font-family: 'Cormorant', serif;
+    width: 100vw;
+    height: 100vh;
+    font-size: 16px;
+    color: variables.$foreground-2;
+    position: relative;
+
+    .hero {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+
+        @mixin mirror-right {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &__black-hole {
+            @include mirror-right();
+            width: 470px;
+            height: 280px;
+            //   background-color: black;
+            background-color: variables.$foreground-2;
+        }
+
+        &__left-text {
+            position: absolute;
+            right: 50%;
+            top: 50%;
+            transform: translateY(-100%);
+            padding-right: 10px;
+        }
+
+        .title {
+            h1 {
+                font-size: 48px;
+                text-align: right;
+                position: relative;
+                letter-spacing: -2px;
+                font-style: italic;
+                position: relative;
+            }
+
+            &__underline {
+                position: absolute;
+                left: 0;
+                width: 0;
+                height: 3px;
+                background-color: variables.$foreground-2;
+                transition: width 0.7s;
+
+                &--upper {
+                    top: 48px;
+                }
+
+                &--lower {
+                    top: 96px;
+                }
+            }
+        }
+
+        &__right-text {
+            @include mirror-right();
+            transform: translateY(-100%);
+            margin-top: -48px;
+            padding-left: 10px;
+
+            h2 {
+                font-size: 48px;
+                color: white;
+            }
+        }
+    }
+}
