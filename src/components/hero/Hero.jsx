@@ -12,7 +12,7 @@ const Blog = () => {
     }, [wordIndex]);
 
     return (
-        <div className="blog">
+        <div className="blog section">
             <div className="hero">
                 <div className="hero__black-hole"></div>
                 <div className="hero__left-text title">

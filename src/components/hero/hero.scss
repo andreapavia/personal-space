@@ -2,14 +2,6 @@
 @use '../../styles/global';
 
 .blog {
-    background-color: variables.$background-1;
-    font-family: 'Cormorant', serif;
-    width: 100vw;
-    height: 100vh;
-    font-size: 16px;
-    color: variables.$foreground-2;
-    position: relative;
-
     .hero {
         position: relative;
         width: 100vw;
@@ -26,7 +18,6 @@
             @include mirror-right();
             width: 470px;
             height: 280px;
-            //   background-color: black;
             background-color: variables.$foreground-2;
         }
 

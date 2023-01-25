@@ -1,0 +1,31 @@
+.whoami {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .cmdline {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 48px;
+        font-weight: bold;
+        color: #32cd32;
+
+        h2 span:last-child {
+            animation: blink 0.35s infinite;
+
+            @keyframes blink {
+                0% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 1;
+                }
+                51% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
