@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import './ball.scss';
 
 const onMouseMove = (event, mouseCoordinates) => {
-    mouseCoordinates.x = event.pageX;
-    mouseCoordinates.y = event.pageY;
+    mouseCoordinates.x = event.pageX - window.scrollX;
+    mouseCoordinates.y = event.pageY - window.scrollY;
 };
 
 const Ball = () => {
