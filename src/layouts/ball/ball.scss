@@ -1,3 +1,5 @@
+@use '../../styles/variables';
+
 .ball {
     position: fixed;
     background-color: red;
@@ -10,4 +12,26 @@
     transform: translate(-50%, -50%);
     mix-blend-mode: difference;
     z-index: 9999;
+}
+
+.xline {
+    position: fixed;
+    // background-color: variables.$foreground-2;
+    left: 0;
+    right: 0;
+    height: 2px;
+    top: 0;
+    background-color: red;
+    mix-blend-mode: difference;
+}
+
+.yline {
+    position: fixed;
+    // background-color: variables.$foreground-2;
+    top: 0 !important;
+    bottom: 0;
+    width: 2px;
+    left: 0;
+    background-color: red;
+    mix-blend-mode: difference;
 }

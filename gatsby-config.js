@@ -37,8 +37,8 @@ const gatsbyFontLoader = {
         ],
         web: [
             {
-                name: `Amiri`,
-                file: `https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&display=swap`,
+                name: `Aboreto`,
+                file: `https://fonts.googleapis.com/css2?family=Aboreto&display=swap`,
             },
         ],
     },
@@ -59,8 +59,8 @@ module.exports = {
         `gatsby-plugin-sharp`,
         'gatsby-plugin-sass',
         'gatsby-plugin-layout',
-        gatsbySourceFileSystem,
         gatsbyFontLoader,
+        gatsbySourceFileSystem,
         gatsbyPluginEslint,
         manifestPluginConfig,
     ],
