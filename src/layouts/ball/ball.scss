@@ -23,6 +23,7 @@
     top: 0;
     background-color: red;
     mix-blend-mode: difference;
+    z-index: 9999;
 }
 
 .yline {
@@ -34,4 +35,5 @@
     left: 0;
     background-color: red;
     mix-blend-mode: difference;
+    z-index: 9999;
 }
