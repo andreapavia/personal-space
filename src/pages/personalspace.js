@@ -3,9 +3,9 @@ import Hero from '../components/hero/Hero';
 
 const PersonalSpace = () => {
     return (
-        <>
+        <section>
             <Hero />
-        </>
+        </section>
     );
 };
 
