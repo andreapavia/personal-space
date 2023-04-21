@@ -21,7 +21,7 @@ const Ball = () => {
         let ballY = 0;
         let xLineY = 0;
         let yLineX = 0;
-        let speed = 0.06;
+        let speed = 0.2;
 
         function animate() {
             let distX = mouseCoordinates.x - ballX;
