@@ -1,0 +1,61 @@
+@use '../../styles/variables';
+@use '../../styles/global';
+
+.blog {
+    .hero {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        overflow: hidden;
+
+        &__textbar {
+            position: relative;
+
+            h1 {
+                padding: 0 10px;
+                font-size: 164px;
+                display: flex;
+                flex-flow: column;
+            }
+        }
+
+        .textbar {
+            &__row {
+                transition: transform 0.5s;
+                will-change: transform;
+
+                &.test {
+                    transform: translate(-110%, 0);
+                }
+            }
+        }
+    }
+
+    .description {
+        display: flex;
+        height: 100%;
+        flex-flow: column;
+        justify-content: flex-start;
+        flex-basis: 30%;
+        padding: 20px;
+
+        transition: transform 0.5s;
+        will-change: transform;
+
+        &.test {
+            transform: translate(110%, 0);
+        }
+
+        &__text-p {
+            font-size: 18px;
+            margin-bottom: 20px;
+
+            a {
+                padding: 10px;
+            }
+        }
+    }
+}

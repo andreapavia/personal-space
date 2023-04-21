@@ -1,6 +1,14 @@
 import React from 'react';
-import Blog from '../components/blog/Blog';
+import Welcome from '../components/welcome/Welcome';
 
-export default () => {
-    return <Blog />;
+const Index = () => {
+    return <Welcome />;
 };
+
+// ROADMAP
+// make this stuff accessible
+
+// TODO
+// improve text type animation (it cant go below 400ms)
+// add butter smoooth scroll
+export default Index;

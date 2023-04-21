@@ -1,65 +1,67 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
+const manifestPluginConfig = {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+        name: "Andrea Francesco Pavia's Portfolio",
+        short_name: "Andrea Francesco Pavia's Portfolio",
+        start_url: '/',
+        background_color: '#d72638',
+        icon: 'src/images/icon.png',
+        crossOrigin: `use-credentials`,
+    },
+};
+
+const siteMetaData = {
+    title: `Andrea's personal space`,
+    description: `
+  My own showcase and tinkering website.
+`,
+    author: `@andreapavia`,
+    siteUrl: `https://personalspace.gatsbyjs.io/`,
+};
+
+const gatsbySourceFileSystem = {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+    },
+};
+
+const gatsbyFontLoader = {
+    resolve: `gatsby-omni-font-loader`,
+    options: {
+        enableListener: true,
+        preconnect: [
+            `https://fonts.googleapis.com`,
+            `https://fonts.gstatic.com`,
+        ],
+        web: [
+            {
+                name: `Aboreto`,
+                file: `https://fonts.googleapis.com/css2?family=Aboreto&display=swap`,
+            },
+        ],
+    },
+};
+
+const gatsbyPluginEslint = {
+    resolve: 'gatsby-plugin-eslint',
+};
 
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-    siteMetadata: {
-        title: `Andrea's personal space`,
-        description: `
-      My own showcase and tinkering website.
-    `,
-        author: `@andreapavia`,
-        siteUrl: `https://personalspace.gatsbyjs.io/`,
-    },
+    siteMetadata: { ...siteMetaData },
     plugins: [
         `gatsby-plugin-image`,
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                name: `images`,
-                path: `${__dirname}/src/images`,
-            },
-        },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
-        {
-            resolve: `gatsby-plugin-manifest`,
-            options: {
-                name: `gatsby-starter-default`,
-                short_name: `starter`,
-                start_url: `/`,
-                background_color: `#663399`,
-                // This will impact how browsers show your PWA/website
-                // https://css-tricks.com/meta-theme-color-and-trickery/
-                // theme_color: `#663399`,
-                display: `minimal-ui`,
-                icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-            },
-        },
-        {
-            resolve: `gatsby-omni-font-loader`,
-            options: {
-                enableListener: true,
-                preconnect: [
-                    `https://fonts.googleapis.com`,
-                    `https://fonts.gstatic.com`,
-                ],
-                web: [
-                    {
-                        name: `Amiri`,
-                        file: `https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&display=swap`,
-                    },
-                ],
-            },
-        },
-        {
-            resolve: 'gatsby-plugin-eslint',
-        },
         'gatsby-plugin-sass',
+        'gatsby-plugin-layout',
+        gatsbyFontLoader,
+        gatsbySourceFileSystem,
+        gatsbyPluginEslint,
+        manifestPluginConfig,
     ],
 };
