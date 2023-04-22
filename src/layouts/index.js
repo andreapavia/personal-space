@@ -1,15 +1,15 @@
 import React from 'react';
 
-// import Ball from './ball/Ball';
+import Ball from './ball/Ball';
 // import Header from './header/Header';
-// import Circles from './circles/Circles';
+import Circles from './circles/Circles';
 
 const Layout = ({ children }) => {
     return (
         <>
-            {/* <Ball /> */}
+            <Ball />
             {/* <Header /> */}
-            {/* <Circles quantity={10} /> */}
+            <Circles quantity={20} />
             {children}
         </>
     );
