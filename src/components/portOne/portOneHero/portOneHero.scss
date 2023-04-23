@@ -1,24 +1,12 @@
-@use '../portOne-variables';
 @use '../../../styles/variables';
-
-.portone-default {
-    color: #fff;
-}
 
 .portone {
     width: 100vw;
     height: 100vh;
-    background-color: portOne-variables.$top-hero-gradient;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background: linear-gradient(
-        0deg,
-        portOne-variables.$bottom-hero-gradient 0%,
-        portOne-variables.$top-hero-gradient 30%
-    );
 
     .heading {
         text-align: center;
@@ -33,6 +21,7 @@
 
             span.italic {
                 font-style: italic;
+                margin-right: 15px;
             }
         }
 

@@ -1,8 +1,7 @@
-@use '../portOne-variables';
 @use '../../../styles/variables';
 
 .whoami {
-    background-color: #f5f0f0;
+    background-color: variables.$portone-bg-1;
     min-height: 100vh;
     color: #000;
     font-family: Helvetica, sans-serif;

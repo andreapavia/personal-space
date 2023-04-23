@@ -1,0 +1,10 @@
+@use '../../../styles/variables';
+
+.work {
+    background-color: variables.$portone-bg-1;
+
+    .portone {
+        height: 56vw;
+        max-height: 800px;
+    }
+}

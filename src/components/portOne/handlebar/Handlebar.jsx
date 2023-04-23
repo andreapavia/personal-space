@@ -20,13 +20,14 @@ const pages = [
         slug: '/port-one/whoami/',
     },
 ];
+const minOffset = 20;
 
 export const Handlebar = () => {
     const [currentPage, setCurrentPage] = useState(
         pages.find((page) => page.slug === window.location.pathname)
     );
     const [decorationStyle, setDecorationStyle] = useState({
-        left: 30,
+        left: minOffset,
         width: 49,
     });
 
@@ -35,7 +36,7 @@ export const Handlebar = () => {
             `.handlebar__${currentPage.id}`
         );
         setDecorationStyle({
-            left: currentElement.offsetLeft + 30,
+            left: currentElement.offsetLeft + minOffset,
             width: currentElement.clientWidth,
         });
     }, []);
@@ -49,10 +50,9 @@ export const Handlebar = () => {
                             <button
                                 className={`handlebar__${page.id}`}
                                 onClick={(e) => {
-                                    console.log(e.target);
                                     setCurrentPage(page);
                                     setDecorationStyle({
-                                        left: e.target.offsetLeft + 30,
+                                        left: e.target.offsetLeft + minOffset,
                                         width: e.target.clientWidth,
                                     });
                                     navigate(page.slug);
