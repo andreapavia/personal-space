@@ -59,6 +59,7 @@ module.exports = {
         `gatsby-plugin-sharp`,
         'gatsby-plugin-sass',
         'gatsby-plugin-layout',
+        'gatsby-plugin-page-transitions',
         gatsbyFontLoader,
         gatsbySourceFileSystem,
         gatsbyPluginEslint,

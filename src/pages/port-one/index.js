@@ -1,5 +1,6 @@
 import React from 'react';
 import { PortOneHero } from '../../components/portOne/portOneHero/PortOneHero';
+import PageTransition from 'gatsby-plugin-page-transitions';
 
 const PersonalSpace = () => {
     const HeadingTextComponent = () => (
@@ -19,13 +20,15 @@ const PersonalSpace = () => {
     );
 
     return (
-        <PortOneHero
-            topGradientColor={'#110e0a'}
-            bottomGradientColor={'#2f1106'}
-            HeadingTextComponent={HeadingTextComponent}
-            SubtitleTextComponent={SubtitleTextComponent}
-            color={'#fff'}
-        />
+        <PageTransition>
+            <PortOneHero
+                topGradientColor={'#110e0a'}
+                bottomGradientColor={'#2f1106'}
+                HeadingTextComponent={HeadingTextComponent}
+                SubtitleTextComponent={SubtitleTextComponent}
+                color={'#fff'}
+            />
+        </PageTransition>
     );
 };
 
