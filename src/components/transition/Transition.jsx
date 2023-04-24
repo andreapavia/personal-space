@@ -9,6 +9,7 @@ const exitTimeout = 800;
 const getTransitionStyles = {
     entering: {
         position: `absolute`,
+        overflow: 'hidden',
         top: '100%',
         zIndex: 3,
     },
@@ -45,6 +46,7 @@ export class Transition extends React.PureComponent {
                         exit: exitTimeout,
                     }}
                     unmountOnExit={true}
+                    mountOnEnter={true}
                 >
                     {(status) => (
                         <div

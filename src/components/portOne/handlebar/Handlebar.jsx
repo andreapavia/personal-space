@@ -21,9 +21,9 @@ const pages = [
 ];
 const minOffset = 20;
 
-export const Handlebar = () => {
+export const Handlebar = ({ location }) => {
     const [currentPage, setCurrentPage] = useState(
-        pages.find((page) => page.slug === window.location.pathname)
+        pages.find((page) => page.slug === location.pathname)
     );
     const [decorationStyle, setDecorationStyle] = useState({
         left: minOffset,
@@ -31,15 +31,21 @@ export const Handlebar = () => {
     });
 
     useEffect(() => {
-        const currentElement = document.querySelector(
-            `.handlebar__${currentPage.id}`
-        );
-        setDecorationStyle({
-            left: currentElement.offsetLeft + minOffset,
-            width: currentElement.clientWidth,
-        });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+        setCurrentPage(pages.find((page) => page.slug === location.pathname));
+    }, [location.pathname]);
+
+    useEffect(() => {
+        if (currentPage) {
+            const currentElement = document.querySelector(
+                `.handlebar__${currentPage.id}`
+            );
+
+            setDecorationStyle({
+                left: currentElement.offsetLeft + minOffset,
+                width: currentElement.clientWidth,
+            });
+        }
+    }, [currentPage]);
 
     return (
         <div className="handlebar">

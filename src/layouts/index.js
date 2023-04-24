@@ -15,7 +15,7 @@ const Layout = ({ children, location }) => {
             {/* <Header /> */}
             {/* <Circles quantity={20} /> */}
             {handlebarPaths.includes(children.props.location.pathname) ? (
-                <Handlebar />
+                <Handlebar location={location} />
             ) : null}
             <Transition location={location}>{children}</Transition>
         </>

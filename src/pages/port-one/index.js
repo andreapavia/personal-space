@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { PortOneHero } from '../../components/portOne/portOneHero/PortOneHero';
+import { navigate } from 'gatsby';
+import '../../styles/portOne/portone-global.scss';
 
 const PersonalSpace = () => {
+    const [scrolled, setScrolled] = useState(false);
+    const body = document.querySelector('body');
+
     const HeadingTextComponent = () => (
         <span>
             <span className="italic">A</span>N<span className="italic">D</span>
@@ -17,8 +22,40 @@ const PersonalSpace = () => {
             motorcycles. <br /> as a matter of facts, i am italian myself.
         </>
     );
+
+    const onScroll = useCallback(() => {
+        Object.assign(body.style, {
+            overflow: 'hidden',
+            height: '100%',
+        });
+
+        if (!scrolled) {
+            setScrolled(true);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [scrolled]);
+
+    useEffect(() => {
+        if (scrolled) {
+            navigate('/port-one/work/');
+        }
+    }, [scrolled]);
+
+    useEffect(() => {
+        window.addEventListener('scroll', onScroll);
+
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+            Object.assign(body.style, {
+                overflow: 'visible',
+                height: 'auto',
+            });
+        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
-        <section className="portone-default">
+        <section className="portone-default portone-index">
             <PortOneHero
                 topGradientColor={'#110e0a'}
                 bottomGradientColor={'#2f1106'}
