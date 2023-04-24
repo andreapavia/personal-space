@@ -11,6 +11,10 @@
     font-family: Helvetica, sans-serif;
     z-index: 99;
 
+    &--disabled {
+        pointer-events: none;
+    }
+
     &__inner {
         position: relative;
     }

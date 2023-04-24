@@ -30,6 +30,7 @@ export const Handlebar = ({ location }) => {
         left: minOffset,
         width: 49,
     });
+    const [disabled, setDisabled] = useState(false);
 
     useEffect(() => {
         setCurrentPage(pages.find((page) => page.slug === location.pathname));
@@ -49,7 +50,7 @@ export const Handlebar = ({ location }) => {
     }, [currentPage]);
 
     return (
-        <div className="handlebar">
+        <div className={`handlebar ${disabled ? 'handlebar--disabled' : ''}`}>
             <div className="handlebar__inner">
                 <ul>
                     {pages.map((page, i) => (
@@ -62,6 +63,8 @@ export const Handlebar = ({ location }) => {
                                         left: e.target.offsetLeft + minOffset,
                                         width: e.target.clientWidth,
                                     });
+                                    setDisabled(true);
+                                    setTimeout(() => setDisabled(false), 1200);
                                     navigate(page.slug);
                                 }}
                             >

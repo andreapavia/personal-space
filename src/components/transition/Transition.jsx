@@ -5,20 +5,25 @@ import {
 } from 'react-transition-group';
 import { PATH_HOME } from '../../lib/portOne/paths';
 
-const timeout = 300;
-const exitTimeout = 800;
+const timeout = 400;
+const exitTimeout = 1200;
 const getTransitionStyles = {
     entering: {
         position: `absolute`,
         overflow: 'hidden',
         top: '100%',
         zIndex: 3,
+        borderRadius: '50px',
     },
     entered: {
         position: 'absolute',
-        transition: `top ${timeout}ms ease-in-out .1s`,
+        transition: `top ${timeout}ms ease-in-out .1s, border-radius ${
+            exitTimeout / 2
+        }ms ease-in-out`,
         top: '0',
         zIndex: 3,
+        borderRadius: '50px',
+        overflow: 'hidden',
     },
     exiting: {
         transition: `transform ${exitTimeout}ms ease-in-out, transform ${
@@ -28,7 +33,7 @@ const getTransitionStyles = {
         }ms ease-in-out, filter ${exitTimeout / 2}ms ease-in-out`,
         transform: 'scale(0.95)',
         filter: 'brightness(55%)',
-        borderRadius: '20px',
+        borderRadius: '50px',
         overflow: 'hidden',
         zIndex: 2,
     },
@@ -77,6 +82,37 @@ export class Transition extends React.Component {
                     onExiting={(node) => {
                         node.style.position = 'fixed';
                         node.style.top = -1 * this.state.scrollY + 'px';
+                    }}
+                    onExit={() => {
+                        setTimeout(
+                            () =>
+                                document
+                                    .querySelector('body')
+                                    .classList.add(
+                                        'portone-background--darken'
+                                    ),
+                            100
+                        );
+                        document
+                            .querySelector('body')
+                            .classList.add('portone-background--darken');
+                    }}
+                    onExited={() => {
+                        setTimeout(
+                            () =>
+                                document
+                                    .querySelector('body')
+                                    .classList.remove(
+                                        'portone-background--darken'
+                                    ),
+                            100
+                        );
+                    }}
+                    onEntered={(node) => {
+                        setTimeout(() => {
+                            node.style.borderRadius = 0;
+                            node.style.overflow = 'visible';
+                        }, timeout);
                     }}
                 >
                     {(status) => (
