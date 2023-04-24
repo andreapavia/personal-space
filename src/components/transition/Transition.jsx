@@ -34,6 +34,29 @@ const getTransitionStyles = {
 };
 
 export class Transition extends React.PureComponent {
+    constructor() {
+        super();
+        this.state = {
+            scrollY: 0,
+        };
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.onScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.onScroll);
+    }
+
+    onScroll = () => {
+        this.setState({ scrollY: window.scrollY });
+    };
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextState.scrollY === this.state.scrollY;
+    }
+
     render() {
         const { children, location } = this.props;
 
@@ -47,6 +70,10 @@ export class Transition extends React.PureComponent {
                     }}
                     unmountOnExit={true}
                     mountOnEnter={true}
+                    onExiting={(node) => {
+                        node.style.position = 'fixed';
+                        node.style.top = -1 * this.state.scrollY + 'px';
+                    }}
                 >
                     {(status) => (
                         <div
