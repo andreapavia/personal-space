@@ -17,8 +17,8 @@ export const PortOneHero = ({
 
     return (
         <>
-            <section
-                className="portone-default portone"
+            <div
+                className="portone"
                 style={{ background: backgroundGradient, color }}
             >
                 <div className="portone__gradient"></div>
@@ -30,7 +30,7 @@ export const PortOneHero = ({
                         <SubtitleTextComponent />
                     </h2>
                 </div>
-            </section>
+            </div>
         </>
     );
 };

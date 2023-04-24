@@ -37,7 +37,7 @@ export const Work = () => {
         };
     }, []);
     return (
-        <div className="work" ref={containerRef}>
+        <section className="portone-default work" ref={containerRef}>
             <PortOneHero
                 topGradientColor={'transparent'}
                 bottomGradientColor={'transparent'}
@@ -51,6 +51,6 @@ export const Work = () => {
                 <LayoutFull />
                 <LayoutFullPlusRows orientation={'left'} />
             </div>
-        </div>
+        </section>
     );
 };

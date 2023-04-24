@@ -4,10 +4,11 @@ import React from 'react';
 // import Header from './header/Header';
 // import Circles from './circles/Circles';
 import { Handlebar } from '../components/portOne/handlebar/Handlebar';
+import { Transition } from '../components/transition/Transition';
 
 const handlebarPaths = ['/port-one/', '/port-one/work/', '/port-one/whoami/'];
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
     return (
         <>
             {/* <Ball /> */}
@@ -16,7 +17,7 @@ const Layout = ({ children }) => {
             {handlebarPaths.includes(children.props.location.pathname) ? (
                 <Handlebar />
             ) : null}
-            {children}
+            <Transition location={location}>{children}</Transition>
         </>
     );
 };

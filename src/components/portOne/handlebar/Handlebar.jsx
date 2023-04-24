@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
 import './handlebar.scss';
@@ -39,6 +38,7 @@ export const Handlebar = () => {
             left: currentElement.offsetLeft + minOffset,
             width: currentElement.clientWidth,
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

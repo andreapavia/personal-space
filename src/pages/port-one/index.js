@@ -1,6 +1,5 @@
 import React from 'react';
 import { PortOneHero } from '../../components/portOne/portOneHero/PortOneHero';
-import PageTransition from 'gatsby-plugin-page-transitions';
 
 const PersonalSpace = () => {
     const HeadingTextComponent = () => (
@@ -18,9 +17,8 @@ const PersonalSpace = () => {
             motorcycles. <br /> as a matter of facts, i am italian myself.
         </>
     );
-
     return (
-        <PageTransition>
+        <section className="portone-default">
             <PortOneHero
                 topGradientColor={'#110e0a'}
                 bottomGradientColor={'#2f1106'}
@@ -28,7 +26,7 @@ const PersonalSpace = () => {
                 SubtitleTextComponent={SubtitleTextComponent}
                 color={'#fff'}
             />
-        </PageTransition>
+        </section>
     );
 };
 
