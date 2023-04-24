@@ -3,6 +3,7 @@ import {
     TransitionGroup,
     Transition as ReactTransition,
 } from 'react-transition-group';
+import { PATH_HOME } from '../../lib/portOne/paths';
 
 const timeout = 300;
 const exitTimeout = 800;
@@ -33,7 +34,7 @@ const getTransitionStyles = {
     },
 };
 
-export class Transition extends React.PureComponent {
+export class Transition extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -54,7 +55,10 @@ export class Transition extends React.PureComponent {
     };
 
     shouldComponentUpdate(nextProps, nextState) {
-        return nextState.scrollY === this.state.scrollY;
+        return (
+            nextState.scrollY === this.state.scrollY ||
+            location.pathname === PATH_HOME
+        );
     }
 
     render() {

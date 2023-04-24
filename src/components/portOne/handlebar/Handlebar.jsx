@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
+import { PATH_HOME, PATH_WHOAMI, PATH_WORK } from '../../../lib/portOne/paths';
 import './handlebar.scss';
 
 const pages = [
     {
         label: 'Home',
         id: 'home',
-        slug: '/port-one/',
+        slug: PATH_HOME,
     },
     {
         label: 'Work',
         id: 'work',
-        slug: '/port-one/work/',
+        slug: PATH_WORK,
     },
     {
         label: 'whoami',
         id: 'whoami',
-        slug: '/port-one/whoami/',
+        slug: PATH_WHOAMI,
     },
 ];
 const minOffset = 20;

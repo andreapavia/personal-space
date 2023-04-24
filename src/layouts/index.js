@@ -5,8 +5,9 @@ import React from 'react';
 // import Circles from './circles/Circles';
 import { Handlebar } from '../components/portOne/handlebar/Handlebar';
 import { Transition } from '../components/transition/Transition';
+import { PATH_HOME, PATH_WHOAMI, PATH_WORK } from '../lib/portOne/paths';
 
-const handlebarPaths = ['/port-one/', '/port-one/work/', '/port-one/whoami/'];
+const handlebarPaths = [PATH_HOME, PATH_WHOAMI, PATH_WORK];
 
 const Layout = ({ children, location }) => {
     return (

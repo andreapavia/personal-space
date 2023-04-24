@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { PortOneHero } from '../../components/portOne/portOneHero/PortOneHero';
 import { navigate } from 'gatsby';
 import '../../styles/portOne/portone-global.scss';
+import { PATH_WORK } from '../../lib/portOne/paths';
 
 const PersonalSpace = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -37,7 +38,7 @@ const PersonalSpace = () => {
 
     useEffect(() => {
         if (scrolled) {
-            navigate('/port-one/work/');
+            navigate(PATH_WORK);
         }
     }, [scrolled]);
 
