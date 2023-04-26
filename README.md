@@ -1,15 +1,11 @@
-
-#  My Personal space
+# My Personal space
 
 Just a simple website that I can use as sandbox/playground.
 
-
 ## Tech Stack
 
-- [Gatsby](https://www.gatsbyjs.com/) - a React-based open source framework for creating websites.
-- [Sass](https://sass-lang.com/) -  CSS extension language. 
-
-
+-   [Gatsby](https://www.gatsbyjs.com/) - a React-based open source framework for creating websites.
+-   [Sass](https://sass-lang.com/) - CSS extension language.
 
 ## Run Locally
 
@@ -37,13 +33,10 @@ Run the dev server
   yarn develop
 ```
 
-
 ## Authors
 
-- [@andreapavia](https://github.com/andreapavia)
-
+-   [@andreapavia](https://github.com/andreapavia)
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
-
+[0BSD](https://opensource.org/license/0bsd/)
