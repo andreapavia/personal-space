@@ -37,6 +37,8 @@ const Circles = ({ quantity }) => {
                     top: `${getRandomInt(50, window.innerHeight - 50)}px`,
                     left: `${getRandomInt(50, window.innerWidth - 50)}px`,
                     mixBlendMode: 'difference',
+                    opacity: '.2',
+                    zIndex: 1,
                 });
 
                 document.querySelector('body').appendChild(circle);

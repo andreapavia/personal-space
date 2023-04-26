@@ -1,0 +1,37 @@
+@use '../../../styles/variables';
+
+.portone {
+    width: 100vw;
+    height: 101vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .heading {
+        text-align: center;
+
+        &__main {
+            line-height: 148px;
+            letter-spacing: -11px;
+            font-size: 184px;
+            font-family: Helvetica, sans-serif;
+            display: flex;
+            flex-flow: column;
+
+            span.italic {
+                font-style: italic;
+                margin-right: 15px;
+            }
+        }
+
+        &__sub {
+            margin: 15px auto;
+            max-width: 700px;
+            font-family: Helvetica, sans-serif;
+            text-transform: uppercase;
+            font-size: 16px;
+            line-height: 18px;
+        }
+    }
+}

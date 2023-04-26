@@ -1,0 +1,14 @@
+@use '../variables';
+
+.portone-index {
+    height: 150vh;
+}
+
+.portone-background {
+    background-color: variables.$portone-bg-1;
+    transition: background-color 600ms ease-in-out;
+
+    &--darken {
+        background-color: #868484;
+    }
+}

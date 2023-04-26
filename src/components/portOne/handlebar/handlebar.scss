@@ -1,0 +1,59 @@
+.handlebar {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;
+    font-size: 20px;
+    padding: 17px 20px;
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-family: Helvetica, sans-serif;
+    z-index: 99;
+
+    &--disabled {
+        pointer-events: none;
+    }
+
+    &__inner {
+        position: relative;
+    }
+
+    &__decoration {
+        position: fixed;
+    }
+
+    .decoration {
+        width: 48px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: #fff;
+        transition: width 0.2s, left 0.3s;
+        transition-timing-function: cubic-bezier(0.5, 1.165, 0.885, 0.81);
+        will-change: left;
+    }
+
+    ul {
+        position: relative;
+        display: flex;
+
+        li {
+            list-style: none;
+            user-select: none;
+
+            button {
+                background-color: transparent;
+                color: #fff;
+                border: none;
+                padding: 0;
+                font-size: 14px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            &:not(:last-child) {
+                margin-right: 50px;
+            }
+        }
+    }
+}
